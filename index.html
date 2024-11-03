@@ -1,246 +1,725 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
- * {
-  margin: 0;
-  padding: 0;
-}
-.wrapper {
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(180deg, #04fafd, 5%, #119dff, 50%, #030423);
-  position: absolute;
-}
-.wrapper h1 {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  font-family: sans-serif;
-  letter-spacing: 1px;
-  word-spacing: 2px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: 888;
-  text-transform: uppercase;
-}
-.wrapper div {
-  height: 60px;
-  width: 60px;
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  border-radius: 50px;
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  animation: 4s linear infinite;
-}
-div .dot {
-  height: 10px;
-  width: 10px;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.5);
-  position: absolute;
-  top: 20%;
-  right: 20%;
-}
-.wrapper div:nth-child(1) {
-  top: 20%;
-  left: 20%;
-  animation: animate 8s linear infinite;
-}
-.wrapper div:nth-child(2) {
-  top: 60%;
-  left: 80%;
-  animation: animate 10s linear infinite;
-}
-.wrapper div:nth-child(3) {
-  top: 40%;
-  left: 40%;
-  animation: animate 3s linear infinite;
-}
-.wrapper div:nth-child(4) {
-  top: 66%;
-  left: 30%;
-  animation: animate 7s linear infinite;
-}
-.wrapper div:nth-child(5) {
-  top: 90%;
-  left: 10%;
-  animation: animate 9s linear infinite;
-}
-.wrapper div:nth-child(6) {
-  top: 30%;
-  left: 60%;
-  animation: animate 5s linear infinite;
-}
-.wrapper div:nth-child(7) {
-  top: 70%;
-  left: 20%;
-  animation: animate 8s linear infinite;
-}
-.wrapper div:nth-child(8) {
-  top: 75%;
-  left: 60%;
-  animation: animate 10s linear infinite;
-}
-.wrapper div:nth-child(9) {
-  top: 50%;
-  left: 50%;
-  animation: animate 6s linear infinite;
-}
-.wrapper div:nth-child(10) {
-  top: 45%;
-  left: 20%;
-  animation: animate 10s linear infinite;
-}
-.wrapper div:nth-child(11) {
-  top: 10%;
-  left: 90%;
-  animation: animate 9s linear infinite;
-}
-.wrapper div:nth-child(12) {
-  top: 20%;
-  left: 70%;
-  animation: animate 7s linear infinite;
-}
-.wrapper div:nth-child(13) {
-  top: 20%;
-  left: 20%;
-  animation: animate 8s linear infinite;
-}
-.wrapper div:nth-child(14) {
-  top: 60%;
-  left: 5%;
-  animation: animate 6s linear infinite;
-}
-.wrapper div:nth-child(15) {
-  top: 90%;
-  left: 80%;
-  animation: animate 9s linear infinite;
-}
-@keyframes animate {
-  0% {
-    transform: scale(0) translateY(0) rotate(70deg);
-  }
-  100% {
-    transform: scale(1.3) translateY(-100px) rotate(360deg);
-  }
-}
-@media (max-width: 768px) {
-    .wrapper h1 {
-      font-size: 25px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .wrapper div {
-      height: 40px;
-      width: 40px;
-    }
+    <!-- Primary Meta Tags -->
+    <title>Rohit Chapagain - Software Engineer</title>
 
-    div .dot {
-      height: 8px;
-      width: 8px;
-    }
-  }
-  
-</style>
-<title>Portfolio Under Maintenance</title>
+    <meta name="title" content="Rohit Chapagain - Software Engineer">
+    <meta name="description" content="Rohit Chapagain- Passionate Frontend Web Developer creating beautiful and responsive websites. Explore my portfolio and blog for tech insights.">
+    <meta name="keywords" content="Rohit Chapagain, Web Developer, Frontend Developer, Portfolio, Blog, Tech Insights">
+    <meta name="author" content="Rohit Chapagain">
+
+    <!-- Open Graph Meta Tags / Facebook -->
+    <meta property="og:title" content="Rohit Chapagain - Frontend Web Developer">
+    <meta property="og:description" content="Passionate about crafting beautiful and responsive websites. Explore my portfolio and blog for tech insights.">
+    <meta property="og:image" content="assets/images/banner.webp">
+    <meta property="og:url" content="/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rohit Chapagain - Frontend Web Developer">
+    <meta name="twitter:description" content="Passionate about crafting beautiful and responsive websites. Explore my portfolio and blog for tech insights.">
+    <meta name="twitter:image" content="assets/images/banner.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/RC.jpg" type="image/x-icon">
+
+    <!-- Google Fonts: Rubik -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&amp;display=swap">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Preload Important resources -->
+    <link rel="preload" href="assets/css/aos.css" as="style" >
+    <link rel="preload" href="assets/css/owl.carousel.min.css" as="style" >
+    <link rel="preload" href="assets/css/bootstrap.min.css" as="style" />
+    <link rel="preload" href="assets/css/bootstrap-icons.min.css" as="style" />
+    <link rel="preload" href="assets/css/style.css" as="style" />
+
+    <!-- MS-Clarity Analytics -->
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ld2h640kif");
+    </script>
+
 </head>
-<body>
-    <div class="wrapper">
-      <h1>Hi, this is Rohit Chapagain. My portfolio is currently undergoing maintenance</h1>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-      <div><span class="dot"></span></div>
-    </div>
-  </body>
+
+<body data-bs-theme="dark" data-bs-spy="scroll" data-bs-target="#navbar">
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+    
+    <!-- Header -->
+    <header id="header">
+        <nav id="navbar" class="navbar navbar-expand-md">
+            <div class="container">
+                <a href="" class="navbar-brand logo">
+                    <span></span>
+                    <span class="logo-name">Rohit Chapagain</span>
+                    <span></span>
+                </a>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarMenu">
+                    <div class="offcanvas-header">
+                        <a href="" class="offcanvas-title navbar-brand logo" id="offcanvasNavbarMenu" data-aos="fade-down" data-aos-delay="600">
+                            <span><</span>
+                            <span class="logo-name">Rohit</span>
+                            <span>/></span>
+                        </a>
+                        <button type="button" class="navbar-toggler" data-bs-dismiss="offcanvas" aria-label="Close Navigation Menu"><i class="bi bi-x toggle-icon"></i></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav nav-underline justify-content-end flex-grow-1">
+                            <li class="nav-item" data-aos="fade-down" data-aos-delay="500" data-bs-dismiss="offcanvas"><a href="#hero" class="nav-link active" aria-current="page">Home</a></li>
+                            <li class="nav-item" data-aos="fade-down" data-aos-delay="600" data-bs-dismiss="offcanvas"><a href="#about" class="nav-link">About</a></li>
+                            <li class="nav-item" data-aos="fade-down" data-aos-delay="700" data-bs-dismiss="offcanvas" ><a href="#skills" class="nav-link">Skills</a></li>
+                            <li class="nav-item" data-aos="fade-down" data-aos-delay="800" data-bs-dismiss="offcanvas"><a href="#projects" class="nav-link">Projects</a></li>
+                            <li class="nav-item" data-aos="fade-down" data-aos-delay="900" data-bs-dismiss="offcanvas"><a href="#blogs" class="nav-link">Blogs</a></li>
+                            <li class="nav-item" data-aos="fade-down" data-aos-delay="1000" data-bs-dismiss="offcanvas"><a href="#contact" class="nav-link">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn border-0" id="switchTheme" data-aos="fade-down" data-aos-delay="600"><i class="bi bi-brightness-high-fill"></i></button>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle Navigation Menu" data-aos="fade-down" data-aos-delay="600"><i class="bi bi-list toggle-icon"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="container">     
+            <div class="row about-content">
+                <div class="col-lg-5 order-lg-2">
+                    <div class="hero-portrait">
+                        <div class="pic" data-aos="fade-up" data-aos-delay="600">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 order-lg-1 hero-content">
+                    <span class="h3" data-aos="fade-up" data-aos-delay="0">Namasté, I'm</span>
+                    <h1 class="name" data-aos="fade-up" data-aos-delay="200"><span>Rohit Chapagain</h1>
+                    <button type="button" class="btn btn-sm mt-3 mb-3 btn-showcase"  data-aos="fade-up" data-aos-delay="400"><i class="bi bi-stars"></i> Software Engineer</button>
+                    <p class="tagline mb-3" data-aos="fade-up" data-aos-delay="600">Started <span class="underline">unintentionally</span> Refactoring is like dental hygiene for software engineers. Skip it, and you'll have a lot more to worry about than just a bad smell <span class="underline">intentionally</span>.</p>
+                    <div class="social-icons pb-2 pt-2 mb-2">
+                        <a href="https://github.com/Rohit-4940" target="_blank" class="github" data-aos="fade-up" data-aos-delay="620"><i class="bi bi-github"></i></a>
+                        <a href="" target="_blank" class="twitter-x" data-aos="fade-up" data-aos-delay="64 0"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.instagram.com/__rohitchapagain__/" target="_blank" class="instagram" data-aos="fade-up" data-aos-delay="660"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.youtube.com/@rohitchapagain348" target="_blank" class="youtube" data-aos="fade-up" data-aos-delay="680"><i class="bi bi-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/rohit-chapagain-686519164/" target="_blank" class="linkedin" data-aos="fade-up" data-aos-delay="690"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.facebook.com/roet.chapagain/" target="_blank" class="discord" data-aos="fade-up" data-aos-delay="690"><i class="bi bi-facebook"></i></a>
+                    </div>
+                    <div class="d-flex call-to-action">
+                        <a href="#contact" data-aos="fade-up" data-aos-delay="700"><button type="button" class="btn me-4 primary-bg-btn"><i class="bi bi-envelope"></i> Contact Me</button></a>
+                        <a href="#projects" data-aos="fade-up" data-aos-delay="800"><button type="button" class="btn btn-light secondary-bg-btn">View Portfolio <i class="bi bi-arrow-up-right-circle"></i></button></a>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Things I Love -->
+    <section id="things-i-love">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">Interests</span></h6>
+            <h2 class="section-heading text-center">Things I Love</h2>
+            <div class="row justify-content-center pt-3 gy-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" >
+                    <div class="card">
+                        <div class="circle-container">
+                            <div class="circle"><i class="bi bi-droplet-half"></i></div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-title">Designing</p>
+                            <p class="card-text">I love designing. When I see something that needs improvement, I enjoy making it better visually. I pay attention to every detail, whether it's a graphic or a user interface. My goal is to create designs that catch the eye and inspire others.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" >
+                    <div class="card">
+                        <div class="circle-container">
+                            <div class="circle"><i class="bi bi-code-slash"></i></i></div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-title">Developing</p>
+                            <p class="card-text">After designing, I dive into development. Coding is where I bring designs to life, turning concepts into digital experiences. Each line of code reflects my vision for functionality and elegance, showcasing my commitment to excellence.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" >
+                    <div class="card">
+                        <div class="circle-container">
+                            <div class="circle"><i class="bi bi-cup-hot"></i></div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-title">Expanding</p>
+                            <p class="card-text">Expanding beyond creation, I optimize. From templates to full websites, I refine post-development. Leveraging blogging and basic SEO, I enhance visibility and impact online. Each step maximizes reach and effectiveness online.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Me -->
+    <section id="about">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">But who am I?</span></h6>
+            <h2 class="section-heading text-center">About Me</h2>
+            <p class="text-center muted-text mt-3 mb-4">My store in a nutshell ;)</p>
+            <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="200">
+                <div class="col-lg-5 about-portrait">
+                    <img src="assets/images/portrait-3.webp.jpg" class="img-fluid pic" alt="About Me Portrait">
+                </div>
+                <div class="col-lg-7">
+                    <p class="bio">
+                        Hello! I’m Rohit Chapagain, a 24-year-old full-stack software engineer with 1.5 years of experience at SB Solution Nepal. I specialize in AngularJS for front-end development and Java Spring Boot for building robust back-end systems. I completed my BSc (Hons) in Computing from The British College in Nepal, an experience that challenged and strengthened my skills, teaching me the value of persistence and dedication.
+
+                        Beyond my professional life, I’m deeply spiritual and find great fulfillment in my faith. I often spend time reading religious texts, which provide me with peace and perspective. Visiting sacred places and engaging in quiet reflection is something I value deeply, as it reconnects me with a sense of purpose. I also enjoy reading a wide variety of books that encourage gratitude and help me appreciate life’s journey.
+                        
+                        My personal and professional paths have given me a balanced outlook on life, combining technical expertise with a mindful and grounded perspective. I am passionate about continuous growth, both in my career and as a person, and am always eager to learn, connect, and contribute meaningfully..</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">What do I know?</span></h6>
+            <h2 class="section-heading text-center">Skills</h2>
+            <p class="text-center muted-text mt-3 mb-4">Here are some of the technologies that are part of my current stack:</p>
+            <div class="row justify-content-center row-cols-2 row-cols-md-3 row-cols-lg-6 mt-4 gy-4 skills-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="assets/images/skills/html.png" alt="HTML">
+                        <p class="skill-name">HTML</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="assets/images/skills/css.jpg" alt="CSS"/>
+                        <p class="skill-name">CSS</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="assets/images/skills/javascript.png"JavaScript">
+                        <p class="skill-name">JS</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="assets/images/skills/nodejs.jpg" alt="NodeJS">
+                        <p class="skill-name">NodeJS</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="assets/images/skills/expressjs.webp" alt="ExpressJS">
+                        <p class="skill-name">ExpressJS</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="assets/images/skills/spring.png" alt="Spring Boot">
+                        <p class="skill-name">Spring Boot</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="assets/images/skills/angular.cms" alt="Angular CLI">
+                        <p class="skill-name">Angular JS</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="assets/images/skills/react.png" alt="React">
+                        <p class="skill-name">React JS</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="assets/images/skills/python.png" alt="Python">
+                        <p class="skill-name">Python</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="assets/images/skills/mongo.png" alt="MongoDB">
+                        <p class="skill-name">MongoDB</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="assets/images/skills/machine.jpg" alt="machine">
+                        <p class="skill-name">Machine Learning</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="assets/images/skills/data.jpg" alt="data">
+                        <p class="skill-name">Data Science</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools -->
+    <section id="tools">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">What I uses?</span></h6>
+            <h2 class="section-heading text-center">Tools</h2>
+            <p class="text-center muted-text mt-3 mb-4">Tech stack known? Here are tools that I runs:</p>
+            <div class="row justify-content-center row-cols-2 row-cols-md-3 row-cols-lg-6 mt-4 gy-4 tools-container" data-aos="fade-down" data-aos-delay="200">
+                <div class="col">
+                    <div class="tool">
+                        <img class="tool-image" src="assets/images/tools/vscode.svg" alt="VSCode">
+                        <p class="tool-name">VSCode</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tool">
+                        <img class="tool-image" src="assets/images/tools/github.svg" alt="Github">
+                        <p class="tool-name">Github</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tool">
+                        <img class="tool-image" src="assets/images/tools/canva.svg" alt="Canva">
+                        <p class="tool-name">Canva</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tool">
+                        <img class="tool-image" src="assets/images/tools/Figma.svg" alt="Figma">
+                        <p class="tool-name">Figma</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tool">
+                        <img class="tool-image" src="assets/images/tools/ChatGPT.svg" alt="ChatGPT">
+                        <p class="tool-name">ChatGPT</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tool">
+                        <img class="tool-image" src="assets/images/tools/Gemini.svg" alt="Gemini">
+                        <p class="tool-name">Gemini</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timelines 
+    <section id="timelines">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">What am Doing?</span></h6>
+            <h2 class="section-heading text-center">Timelines</h2>
+            <div class="row justify-content-center row-cols-2 row-cols-md-3 row-cols-lg-6 skills-container">
+                <div class="col">
+                </div>
+            </div>
+        </div>
+    </section> -->
+            
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">What I've done?</span></h6>
+            <h2 class="section-heading text-center">Projects</h2>
+            <div class="row justify-content-center mt-4 gy-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="col-7 p-0">
+                                    <a href="" class="card-title title" target="_blank">Covid 19 Tracking</a>
+                                    <p class="stacks m-0">React JS</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description-container">
+                            <p class="description">It will help to be update of all around the world covid 19 active, deadth and recover cases.</p>
+                        </div>
+                        <div class="banner-container">
+                            <img src="assets/images/projects/covid.png" class="card-img-top banner" alt="Covid 19">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="col-7 p-0">
+                                    <a href="" class="card-title title" target="_blank">Stock Management System</a>
+                                    <p class="stacks m-0">anagular | spring Boot</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description-container">
+                            <p class="description">It will help to keep track of stock item in the department store like purchase sales and so on</p>
+                        </div>
+                        <div class="banner-container">
+                            <img src="assets/images/projects/stock.png" class="card-img-top banner" alt="stock management">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card cursor-not-allowed">
+                        <div class="card-body ">
+                            <div class="d-flex align-items-center">
+                                <div class="col-7 p-0">
+                                    <span class="card-title title">Loan Management System</span>
+                                    <p class="stacks m-0">Angular | Spring Boot</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description-container">
+                            <p class="description">Help to Loan management system in Bank.</p>
+                        </div>
+                        <div class="banner-container cursor-not-allowed">
+                            <img src="assets/images/projects/loan2.jpg" class="card-img-top banner" alt="SimplCalc Banner">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card cursor-not-allowed">
+                        <div class="card-body ">
+                            <div class="d-flex align-items-center">
+                                <div class="col-7 p-0">
+                                    <span class="card-title title">Hospital Management System/span>
+                                    <p class="stacks m-0">Angular | Spring Boot</p>
+                                </div>
+                                <div class="col-3 align-middle">
+                                    <button class="btn btn-sm in-progress cursor-not-allowed">In Progress</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description-container">
+                            <p class="description">Help patients consult the appropriate doctor from home and book their appointment time..</p>
+                        </div>
+                        <div class="banner-container cursor-not-allowed">
+                            <img src="assets/images/projects/hospital.webp" class="card-img-top banner" alt="Hospital">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <!-- <section id="testimonials">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">Some of my achivement?</span></h6>
+            <h2 class="section-heading text-center">Certification</h2>
+            <p class="text-center muted-text mt-3 mb-4">Some of my Achivement that i achived during my lockdown time</p>
+            <div class="row mt-4 gy-4" data-aos="fade-down" data-aos-delay="200">
+                <div class="col-md-12">
+                    <div id="testimonial-slider" class="owl-carousel">
+                        <div class="testimonial">
+                            <p class="description">
+                                Your brilliance is truly inspiring. You bring so much positivity and creativity wherever you go. Keep shining brightly! Working with you has been always an incredible experience.
+                            </p>
+                            <div class="pic">
+                                <img src="/assets/images/testimonials/Moinudeen.webp" alt="Moinudeen Pic">
+                            </div>
+                            <div class="detail">
+                                <h4 class="name">Moinudeen</h4>
+                                <small class="role" >Programmer</small>
+                            </div>
+                        </div>
+         
+                        <div class="testimonial">
+                            <p class="description">
+                                Bro, I admire your hard work. Your efforts speak volumes about you. You're amazing! Much love, bro! 🤜🤛
+                            </p>
+                            <div class="pic">
+                                <img src="/assets/images/testimonials/Nadeem.webp" alt="Nadeem Pic">
+                            </div>
+                            <div class="detail">
+                                <h4 class="name">Nadeem</h4>
+                                <small class="role">Friend</small>
+                            </div>
+                        </div>
+
+                       <div class="testimonial">
+                            <p class="description">
+                                Vijay's commitment and hard work shine through in everything he does.
+                            </p>
+                            <div class="pic">
+                                <img src="/assets/images/testimonials/J.svg" alt="Jwala Pratap Pic" class="">
+                            </div>
+                            <div class="detail">
+                                <h4 class="name">Jwala Pratap</h4>
+                                <small class="role">Web Developer</small>
+                            </div>
+                        </div>
+
+                        <div class="testimonial">
+                            <p class="description">
+                                Working with Vijay has been an incredible experience. His dedication in web development truly shine through his work. He has a remarkable ability to turn ideas into reality & crafting websites that exceed expectations.
+                            </p>
+                            <div class="pic">
+                                <img src="/assets/images/testimonials/Rahul.webp" alt="Rahul Pic">
+                            </div>
+                            <div class="detail">
+                                <h4 class="name">Rahul Sharma</h4>
+                                <small class="role">Software Developer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section id="certifications">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">Some of my Achievements?</span></h6>
+            <h2 class="section-heading text-center">Certifications</h2>
+            <p class="text-center muted-text mt-3 mb-4">Some of my achievements that I acquired during my lockdown time</p>
+            <div class="row mt-4 gy-4" data-aos="fade-down" data-aos-delay="200">
+                <!-- Certification Card 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/images/certification/cprogram.jpg" class="card-img-top" alt="Certification 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Complete Advanced C & C++ Prgramming</h5>
+                            <p class="card-text">Completed form  University of California, Santa Cruz</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Certification Card 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/images/certification/datascience.jpg" class="card-img-top" alt="Certification 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Complete Concept of Data Science and Math Skills</h5>
+                            <p class="card-text">Completed form Duke University</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Certification Card 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/images/certification/django.png" class="card-img-top" alt="Certification 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Completed Adnavced Concept of Django Programming</h5>
+                            <p class="card-text">Completed form Linkedin Learning Center.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/images/certification/dmarketing.jpg" class="card-img-top" alt="Certification 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Completed Concept of Digital Marketing</h5>
+                            <p class="card-text">Completed form Google Digital Garage.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/images/certification/java.png"class="card-img-top" alt="Certification 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Completed Advanced Java Programming </h5>
+                            <p class="card-text">Completed form Linkedin Learning.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/images/certification/machine.png"class="card-img-top" alt="Certification 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Completed Machine Learning Course</h5>
+                            <p class="card-text">Completed form Udacity in Scholarship.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/images/certification/network.png"class="card-img-top" alt="Certification 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Completed Networking Course</h5>
+                            <p class="card-text">Completed advanced concept of Security.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/images/certification/oop.jpg"class="card-img-top" alt="Certification 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Completed advanced object oriented programming concept</h5>
+                            <p class="card-text">Completed form University of Californina san diego.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/images/certification/project.jpg"class="card-img-top" alt="Certification 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Completed Project Management</h5>
+                            <p class="card-text">To enhance of skill on project management using various tools.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/images/certification/react.png"class="card-img-top" alt="Certification 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Completed React Developer Course</h5>
+                            <p class="card-text">Completed form Linkedin Learning Center.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="assets/images/certification/sqlworkshop.jpg"class="card-img-top" alt="Certification 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Completed Sql Wokrshop</h5>
+                            <p class="card-text">Completed form packt pub.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Blogs -->
+    <section id="blogs">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">Do I Write?</span></h6>
+            <h2 class="section-heading text-center">My Blogs</h2>
+            <p class="text-center muted-text mt-3 mb-4">From tech tips to gaming guides, here are some written pieces that you can check out if you're interested.</p>
+            <div class="row justify-content-center gy-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card article-card">
+                        <div class="banner-container position-relative">
+                            <div class="position-absolute top-0 end-0">
+                                <span class="badge">Unlocking Potential</span>
+                            </div>
+                            <img src="assets/images/skills/potenntial.jpg" class="card-img-top banner" alt="Unlocking Potential">
+                        </div>                      
+                        <div class="card-body">
+                            <a href="https://rohitchapagain.blogspot.com/2024/11/unlocking-potential-exploring-power-of.html"></a><h6 class="card-title"> Unlocking Potential: Exploring The Power of Your Subconscious Mind </h6></a>
+                            <p class="card-text description">Imagine tapping into a wellspring of inner strength.....</p>
+                            <a href="https://rohitchapagain.blogspot.com/2024/11/unlocking-potential-exploring-power-of.html" class="text-decoration-none" target="_blank"><span class="read-more">Read More <i class="bi bi-arrow-up-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card article-card">
+                        <div class="banner-container position-relative">
+                            <div class="position-absolute top-0 end-0">
+                                <span class="badge">Celebrating the Victory</span>
+                            </div>
+                            <img src="assets/images/skills/dashain.png" class="card-img-top banner" alt="Most Popular Mobile Games in India">
+                        </div>                        
+                        <div class="card-body">
+                            <a href="https://rohitchapagain.blogspot.com/2024/10/celebrating-victory-of-virtue-over-evil.html"></a><h6 class="card-title"> Celebrating the Victory of Virtue Over Evil: Dashain Begins for Millions of Hindus Worldwide</h6></a>
+                            <p class="card-text description">Dashain, one of the most significant festivals in the Hindu calendar, marks the onset of a ten-day period of devotion....</p>
+                            <a href="https://rohitchapagain.blogspot.com/2024/10/celebrating-victory-of-virtue-over-evil.html" class="text-decoration-none" target="_blank"><span class="read-more">Read More <i class="bi bi-arrow-up-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card article-card">
+                        <div class="banner-container position-relative">
+                            <div class="position-absolute top-0 end-0">
+                                <span class="badge"> The Perfect Way to Begin Your Day</span>
+                            </div>
+                            <img src="assets/images/skills/perfect.jpg" class="card-img-top banner" alt="Best Discord Banners and GIFs">
+                        </div>                        
+                        <div class="card-body">
+                            <a href="https://rohitchapagain.blogspot.com/2024/10/the-perfect-way-to-begin-your-day.html"></a><h6 class="card-title"> The Perfect Way to Begin Your Day</h6></a>
+                            <p class="card-text description">A little over six months ago, I started a daily habit that transformed my life. It made me more balanced, centered, and helped....</p>
+                            <a href="https://rohitchapagain.blogspot.com/2024/10/the-perfect-way-to-begin-your-day.html" class="text-decoration-none" target="_blank"><span class="read-more">Read More <i class="bi bi-arrow-up-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">What's next!</span></h6>
+            <h2 class="section-heading text-center">Get In Touch</h2>
+            <p class="text-center muted-text mt-3 mb-4">Interested in working together? We should schedule a time to chat. I'll bring the coffee.</p>
+            <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="500">
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <form action="#" method="POST">
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Rohit Chapagain *" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="rohitchapagain504@gmail.com *" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="subject" name="subject"  placeholder="Subject *" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea style="resize: none;" class="form-control" id="message" name="message" rows="5" placeholder="Your message *" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn primary-bg-btn mt-2">Send Message <i class="bi bi-arrow-up-right"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <p class="text-center copyright-text">Made <span class="heart-icon"><i class="bi bi-hearts"></i></span> by <span>Rohit Chapagain</span>.</p>
+        </div>
+    </footer>
+
+    <button class="btn" id="backToTopButton" onclick="scrollToTop()" style="display: none;">
+        <span aria-label="Back to top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up-square" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5 9.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+              </svg>
+        </span>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="assets/js/aos.js" defer></script>
+    <script src="assets/js/jquery-3.7.1.min.js" defer></script>
+    <script src="assets/js/owl.carousel.min.js" defer></script>
+    <script src="assets/js/bootstrap.min.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+
+</body>
 </html>
