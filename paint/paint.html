@@ -1,423 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rohit Chapagain</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rohit Chapagain</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-    .container {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-      max-width: 1000px;
-      width: 100%;
-    }
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            max-width: 1000px;
+            width: 100%;
+        }
 
-    .header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 20px;
-      text-align: center;
-      position: relative;
-    }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
 
-    .header h1 {
-      font-size: 28px;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
 
-    .subtitle {
-      font-size: 14px;
-      opacity: 0.9;
-    }
+        .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
 
-    /* ✅ Close Button - Right Aligned and Mobile Responsive */
-    .close-btn {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      padding: 8px 15px;
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 500;
-      transition: background 0.2s, transform 0.2s;
-      z-index: 10;
-    }
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.2s, transform 0.2s;
+            z-index: 10;
+        }
 
-    .close-btn:hover {
-      background: rgba(255, 255, 255, 0.4);
-      transform: scale(1.05);
-    }
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
 
-    @media (max-width: 768px) {
-      .close-btn {
-        top: 10px;
-        right: 10px;
-        padding: 6px 12px;
-        font-size: 13px;
-      }
-      .header h1 {
-        font-size: 22px;
-      }
-      .subtitle {
-        font-size: 12px;
-      }
-    }
+        .toolbar {
+            background: #f8f9fa;
+            padding: 20px;
+            /* Use flex-wrap to allow elements to wrap on smaller screens */
+            display: flex; 
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid #e9ecef;
+        }
 
-    /* Toolbar, canvas, and button styles remain same */
-    .toolbar {
-      background: #f8f9fa;
-      padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      align-items: center;
-      justify-content: center;
-      border-bottom: 2px solid #e9ecef;
-    }
+        .tool-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            /* Allow groups to shrink or wrap */
+            flex-shrink: 1; 
+            flex-grow: 1;
+            /* Ensure button groups wrap together */
+            min-width: 0; 
+        }
+        
+        /* Tool buttons */
+        .tool-btn {
+            padding: 10px 15px; /* Slightly less horizontal padding for small screens */
+            border: 2px solid #dee2e6;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+            color: #495057;
+            /* Allow buttons to take up equal space within their group on mobile */
+            flex-grow: 1; 
+        }
 
-    .tool-group {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-shrink: 0;
-    }
+        .tool-btn:hover {
+            background: #e9ecef;
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
 
-    .tool-btn {
-      padding: 10px 20px;
-      border: 2px solid #dee2e6;
-      background: white;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 500;
-      transition: all 0.3s;
-      color: #495057;
-    }
+        .tool-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
 
-    .tool-btn:hover {
-      background: #e9ecef;
-      border-color: #667eea;
-      transform: translateY(-2px);
-    }
+        .color-picker-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    .tool-btn.active {
-      background: #667eea;
-      color: white;
-      border-color: #667eea;
-    }
+        .color-display {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 3px solid #dee2e6;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
 
-    .color-picker-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+        .color-display:hover {
+            transform: scale(1.1);
+        }
 
-    .color-display {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      border: 3px solid #dee2e6;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
+        input[type='color'] {
+            width: 60px;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
 
-    .color-display:hover {
-      transform: scale(1.1);
-    }
+        input[type='range'] {
+            width: 120px;
+            height: 6px;
+            border-radius: 3px;
+            outline: none;
+            -webkit-appearance: none;
+            background: #dee2e6;
+        }
 
-    input[type='color'] {
-      width: 60px;
-      height: 40px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+        input[type='range']::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+        }
 
-    input[type='range'] {
-      width: 120px;
-      height: 6px;
-      border-radius: 3px;
-      outline: none;
-      -webkit-appearance: none;
-      background: #dee2e6;
-    }
+        input[type='range']::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            border: none;
+        }
 
-    input[type='range']::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: #667eea;
-      cursor: pointer;
-    }
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #495057;
+        }
 
-    input[type='range']::-moz-range-thumb {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: #667eea;
-      cursor: pointer;
-      border: none;
-    }
+        .canvas-container {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            background: #f8f9fa;
+            overflow-x: auto;
+        }
 
-    label {
-      font-size: 14px;
-      font-weight: 500;
-      color: #495057;
-    }
+        canvas {
+            border: 3px solid #dee2e6;
+            border-radius: 10px;
+            background: white;
+            cursor: crosshair;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            touch-action: none;
+        }
 
-    .canvas-container {
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      background: #f8f9fa;
-      overflow-x: auto;
-    }
+        .save-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
 
-    canvas {
-      border: 3px solid #dee2e6;
-      border-radius: 10px;
-      background: white;
-      cursor: crosshair;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      touch-action: none; /* prevent scrolling */
-    }
+        .save-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
 
-    .save-btn {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 12px 30px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
+        .size-display {
+            font-size: 14px;
+            color: #495057;
+            font-weight: 600;
+        }
 
-    .save-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-    }
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .close-btn {
+                top: 10px;
+                right: 10px;
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+            .header h1 {
+                font-size: 22px;
+            }
+            .subtitle {
+                font-size: 12px;
+            }
 
-    .size-display {
-      font-size: 14px;
-      color: #495057;
-      font-weight: 600;
-    }
+            .toolbar {
+                padding: 15px 10px;
+                gap: 10px;
+                /* Ensure toolbar elements wrap neatly */
+                justify-content: space-between; 
+            }
+            
+            .tool-group {
+                /* Force the main tool group to take up the full width */
+                width: 100%; 
+                flex-wrap: nowrap;
+            }
+            
+            .tool-btn {
+                padding: 8px 10px;
+                font-size: 12px;
+                /* Ensure all four primary tool buttons share the space equally */
+                flex-basis: 25%; 
+                text-align: center;
+            }
+            
+            .color-picker-wrapper,
+            .tool-group:nth-child(3) { /* Targeting the Size group */
+                flex-grow: 1;
+                /* Allow the color picker and size slider to sit side-by-side or wrap */
+                width: 48%; 
+                justify-content: center;
+            }
 
-    @media (max-width: 768px) {
-      .toolbar {
-        padding: 15px 10px;
-        gap: 10px;
-        justify-content: space-around;
-      }
-      .tool-btn {
-        padding: 8px 15px;
-        font-size: 12px;
-      }
-      .color-display {
-        width: 30px;
-        height: 30px;
-      }
-      input[type='color'] {
-        width: 50px;
-        height: 30px;
-      }
-      input[type='range'] {
-        width: 80px;
-      }
-      label,
-      .size-display {
-        font-size: 12px;
-      }
-      .save-btn {
-        padding: 10px 20px;
-        font-size: 14px;
-        width: 100%;
-      }
-      #canvas {
-        max-width: 100%;
-        height: auto;
-      }
-    }
-  </style>
+            .color-display {
+                width: 30px;
+                height: 30px;
+            }
+            input[type='color'] {
+                width: 50px;
+                height: 30px;
+            }
+            input[type='range'] {
+                width: 80px;
+            }
+            label,
+            .size-display {
+                font-size: 12px;
+            }
+            
+            .save-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+                width: 100%; /* Save button takes full width */
+            }
+            
+            #canvas {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="header">
-      <!-- ✅ Close Button moved to right -->
-      <a href="../index.html">
-        <button class="close-btn">✖️ Close</button>
-      </a>
-      <h1>🎨 Utilized Your Free Time</h1>
-      <p class="subtitle">Draw, create, and save your masterpiece</p>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html">
+                <button class="close-btn">✖️ Close</button>
+            </a>
+            <h1>🎨 Utilized Your Free Time</h1>
+            <p class="subtitle">Draw, create, and save your masterpiece</p>
+        </div>
+        <div class="toolbar">
+            <div class="tool-group">
+                <button class="tool-btn active" onclick="setTool(event, 'brush')">✏️ Brush</button>
+                <button class="tool-btn" onclick="setTool(event, 'airbrush')">🌀 Airbrush</button>
+                <button class="tool-btn" onclick="setTool(event, 'eraser')">🧹 Eraser</button>
+                <button class="tool-btn" onclick="clearCanvas()">🗑️ Clear</button>
+            </div>
+
+            <div class="tool-group color-picker-wrapper">
+                <label>Color:</label>
+                <div class="color-display" id="colorDisplay"
+                    onclick="document.getElementById('colorPicker').click()"></div>
+                <input type="color" id="colorPicker" value="#000000" />
+            </div>
+
+            <div class="tool-group">
+                <label>Size: <span class="size-display" id="sizeDisplay">5</span>px</label>
+                <input type="range" id="brushSize" min="1" max="50" value="5" />
+            </div>
+
+            <div class="tool-group">
+                <button class="save-btn" onclick="saveImage()">💾 Save Image</button>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
     </div>
-    <div class="toolbar">
-      <div class="tool-group">
-        <button class="tool-btn active" onclick="setTool(event, 'brush')">✏️ Brush</button>
-        <button class="tool-btn" onclick="setTool(event, 'eraser')">🧹 Eraser</button>
-        <button class="tool-btn" onclick="clearCanvas()">🗑️ Clear</button>
-      </div>
 
-      <div class="tool-group color-picker-wrapper">
-        <label>Color:</label>
-        <div
-          class="color-display"
-          id="colorDisplay"
-          onclick="document.getElementById('colorPicker').click()"
-        ></div>
-        <input type="color" id="colorPicker" value="#000000" />
-      </div>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const colorPicker = document.getElementById('colorPicker');
+        const colorDisplay = document.getElementById('colorDisplay');
+        const brushSize = document.getElementById('brushSize');
+        const sizeDisplay = document.getElementById('sizeDisplay');
 
-      <div class="tool-group">
-        <label>Size: <span class="size-display" id="sizeDisplay">5</span>px</label>
-        <input type="range" id="brushSize" min="1" max="50" value="5" />
-      </div>
+        let painting = false;
+        let currentTool = 'brush';
+        let currentColor = '#000000';
+        let currentSize = 5;
 
-      <div class="tool-group">
-        <button class="save-btn" onclick="saveImage()">💾 Save Image</button>
-      </div>
-    </div>
+        function resizeCanvas() {
+            const container = document.querySelector('.canvas-container');
+            const ratio = window.devicePixelRatio || 1;
+            canvas.width = container.clientWidth * ratio;
+            canvas.height = window.innerHeight * 0.6 * ratio;
+            ctx.scale(ratio, ratio);
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
 
-    <div class="canvas-container">
-      <canvas id="canvas"></canvas>
-    </div>
-  </div>
+        colorDisplay.style.backgroundColor = currentColor;
 
-  <script>
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
-    const colorPicker = document.getElementById('colorPicker');
-    const colorDisplay = document.getElementById('colorDisplay');
-    const brushSize = document.getElementById('brushSize');
-    const sizeDisplay = document.getElementById('sizeDisplay');
+        colorPicker.addEventListener('input', (e) => {
+            currentColor = e.target.value;
+            colorDisplay.style.backgroundColor = currentColor;
+        });
 
-    let painting = false;
-    let currentTool = 'brush';
-    let currentColor = '#000000';
-    let currentSize = 5;
+        brushSize.addEventListener('input', (e) => {
+            currentSize = parseInt(e.target.value, 10);
+            sizeDisplay.textContent = currentSize;
+        });
 
-    function resizeCanvas() {
-      const container = document.querySelector('.canvas-container');
-      const ratio = window.devicePixelRatio || 1;
-      canvas.width = container.clientWidth * ratio;
-      canvas.height = window.innerHeight * 0.6 * ratio;
-      ctx.scale(ratio, ratio);
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+        // --- Mouse Drawing ---
+        canvas.addEventListener('mousedown', (e) => startDrawing(e.clientX, e.clientY));
+        canvas.addEventListener('mousemove', (e) => draw(e.clientX, e.clientY));
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseleave', stopDrawing);
 
-    colorDisplay.style.backgroundColor = currentColor;
+        // --- Touch Drawing ---
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const t = e.touches[0];
+            startDrawing(t.clientX, t.clientY);
+        });
+        canvas.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            const t = e.touches[0];
+            draw(t.clientX, t.clientY);
+        });
+        canvas.addEventListener('touchend', stopDrawing);
 
-    colorPicker.addEventListener('input', (e) => {
-      currentColor = e.target.value;
-      colorDisplay.style.backgroundColor = currentColor;
-    });
+        function getCanvasCoords(clientX, clientY) {
+            const rect = canvas.getBoundingClientRect();
+            return { x: clientX - rect.left, y: clientY - rect.top };
+        }
 
-    brushSize.addEventListener('input', (e) => {
-      currentSize = e.target.value;
-      sizeDisplay.textContent = currentSize;
-    });
+        function startDrawing(x, y) {
+            painting = true;
+            const { x: cx, y: cy } = getCanvasCoords(x, y);
 
-    // Mouse Drawing
-    canvas.addEventListener('mousedown', (e) => startDrawing(e.clientX, e.clientY));
-    canvas.addEventListener('mousemove', (e) => draw(e.clientX, e.clientY));
-    canvas.addEventListener('mouseup', stopDrawing);
-    canvas.addEventListener('mouseleave', stopDrawing);
+            if (currentTool === 'brush' || currentTool === 'eraser') {
+                ctx.beginPath();
+                ctx.moveTo(cx, cy);
+            }
+            if (currentTool === 'airbrush') {
+                airbrushSpray(cx, cy);
+            }
+        }
 
-    // Touch Drawing
-    canvas.addEventListener('touchstart', (e) => {
-      e.preventDefault();
-      const t = e.touches[0];
-      startDrawing(t.clientX, t.clientY);
-    });
-    canvas.addEventListener('touchmove', (e) => {
-      e.preventDefault();
-      const t = e.touches[0];
-      draw(t.clientX, t.clientY);
-    });
-    canvas.addEventListener('touchend', (e) => {
-      e.preventDefault();
-      stopDrawing();
-    });
+        function draw(x, y) {
+            if (!painting) return;
+            const { x: cx, y: cy } = getCanvasCoords(x, y);
 
-    function getCanvasCoords(clientX, clientY) {
-      const rect = canvas.getBoundingClientRect();
-      return { x: clientX - rect.left, y: clientY - rect.top };
-    }
+            if (currentTool === 'airbrush') {
+                airbrushSpray(cx, cy);
+            } else {
+                ctx.lineWidth = currentSize;
 
-    function startDrawing(x, y) {
-      painting = true;
-      const { x: cx, y: cy } = getCanvasCoords(x, y);
-      ctx.beginPath();
-      ctx.moveTo(cx, cy);
-    }
+                if (currentTool === 'eraser') {
+                    ctx.globalCompositeOperation = 'destination-out';
+                    ctx.lineWidth = currentSize * 2;
+                } else {
+                    ctx.globalCompositeOperation = 'source-over';
+                    ctx.strokeStyle = currentColor;
+                }
 
-    function draw(x, y) {
-      if (!painting) return;
-      const { x: cx, y: cy } = getCanvasCoords(x, y);
-      ctx.lineWidth = currentSize;
-      if (currentTool === 'eraser') {
-        ctx.globalCompositeOperation = 'destination-out';
-      } else {
-        ctx.globalCompositeOperation = 'source-over';
-        ctx.strokeStyle = currentColor;
-      }
-      ctx.lineTo(cx, cy);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(cx, cy);
-    }
+                ctx.lineTo(cx, cy);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(cx, cy);
+            }
+        }
 
-    function stopDrawing() {
-      painting = false;
-      ctx.beginPath();
-    }
+        function stopDrawing() {
+            painting = false;
+            ctx.beginPath();
+        }
 
-    function setTool(event, tool) {
-      currentTool = tool;
-      document.querySelectorAll('.tool-btn').forEach((b) => b.classList.remove('active'));
-      event.target.classList.add('active');
-      canvas.style.cursor = tool === 'eraser' ? 'grab' : 'crosshair';
-    }
+        function airbrushSpray(x, y) {
+            const density = 3 + currentSize;
+            const spread = currentSize * 1.5;
 
-    function clearCanvas() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }
+            ctx.fillStyle = currentColor;
+            ctx.globalCompositeOperation = 'source-over';
 
-    function saveImage() {
-      const link = document.createElement('a');
-      link.download = 'my-artwork-' + Date.now() + '.png';
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-    }
-  </script>
+            for (let i = 0; i < density; i++) {
+                const angle = Math.random() * 2 * Math.PI;
+                const radius = Math.random() * spread;
+
+                const offsetX = Math.cos(angle) * radius;
+                const offsetY = Math.sin(angle) * radius;
+
+                ctx.fillRect(x + offsetX, y + offsetY, 1, 1);
+            }
+        }
+
+        function setTool(event, tool) {
+            currentTool = tool;
+            document.querySelectorAll('.tool-btn').forEach((b) => b.classList.remove('active'));
+            event.target.classList.add('active');
+            canvas.style.cursor = tool === 'eraser' ? 'grab' : 'crosshair';
+            if (tool !== 'eraser') {
+                ctx.globalCompositeOperation = 'source-over';
+            }
+            ctx.beginPath();
+        }
+
+        function clearCanvas() {
+            const previousOperation = ctx.globalCompositeOperation;
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.globalCompositeOperation = previousOperation;
+        }
+
+        function saveImage() {
+            const link = document.createElement('a');
+            link.download = 'my-artwork-' + Date.now() + '.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+    </script>
 </body>
 </html>
